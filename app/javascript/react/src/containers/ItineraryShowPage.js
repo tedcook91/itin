@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import DayContainer from '../containers/DayContainer'
 
 
-class ItineraryShowContainer extends Component {
+class ItineraryShowPage extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -36,4 +36,4 @@ class ItineraryShowContainer extends Component {
   }
 }
 
-export default ItineraryShowContainer
+export default ItineraryShowPage

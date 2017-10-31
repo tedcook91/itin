@@ -2,7 +2,7 @@ import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 import NavBar from './components/NavBar';
 import ItineraryIndex from './containers/ItineraryIndex';
-import ItineraryShowContainer from './containers/ItineraryShowContainer';
+import ItineraryShowPage from './containers/ItineraryShowPage';
 import HomePage from './containers/HomePage';
 
 const App = props =>
@@ -11,7 +11,8 @@ const App = props =>
     <div>
       <Switch>
         <Route exact path="/" component={HomePage} />
-        <Route path="/:itinerary_slug" component={ItineraryShowContainer} />
+        <Route path="/:user_slug" component={ItineraryIndex} />
+        <Route path="/:user_slug/:itinerary_slug" component={ItineraryShowPage} />
       </Switch>
     </div>
   </div>

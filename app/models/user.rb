@@ -14,4 +14,6 @@ class User < ApplicationRecord
     user.save!
     user
   end
+
+  has_many :itineraries
 end
