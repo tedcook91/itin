@@ -12,7 +12,7 @@ class ItineraryIndex extends Component {
   render() {
     return(
       <div>
-        TEST
+        THIS IS THE ITIN INDEX PAGE
       </div>
     )
   }

@@ -9,7 +9,7 @@ class DayContainer extends Component {
     this.state = {
       days: []
     }
-    // this.addActivity = this.addActivity.bind(this)
+    // this.addDay = this.addDay.bind(this)
 
   }
 
