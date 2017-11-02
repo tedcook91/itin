@@ -22,7 +22,8 @@ class DayForm extends React.Component {
     event.preventDefault()
     const formPayload = {
       activityType: this.state.activityType,
-      body: this.state.body
+      body: this.state.body,
+      location: this.state.location
     }
     // this.props.addActivity(formPayload)
   }
@@ -41,6 +42,12 @@ class DayForm extends React.Component {
           label="Body"
           name="body"
           handleChange={this.handleChange}
+        />
+        <TextInputField
+          content={this.state.location}
+          label="Location"
+          name="location"
+          handleChange={this.state.handleChange}
         />
 
         <div>

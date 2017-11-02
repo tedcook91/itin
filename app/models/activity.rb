@@ -1,5 +1,5 @@
 class Activity < ApplicationRecord
   belongs_to :day
 
-  validates_presence_of :location, :type
+  validates_presence_of :location, :type, :user
 end

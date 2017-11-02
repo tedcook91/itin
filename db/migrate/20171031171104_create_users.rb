@@ -10,7 +10,9 @@ class CreateUsers < ActiveRecord::Migration[5.1]
       t.string :refresh_token
       t.datetime :oauth_expires_at
 
-      t.timestamps
+      t.timestamps null: false
     end
+
+    add_index :users, :email, unique: true
   end
 end

@@ -7,7 +7,7 @@ const NavBar = props => {
   return(
     <div>
       <Link to='/'>Home</Link>
-      <Link to="/itineraries">Itineraries</Link>
+      <Link to="/user/:id">Itineraries</Link>
     </div>
   )
 }
