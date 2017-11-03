@@ -8,18 +8,19 @@ Rails.application.routes.draw do
     namespace "api" do
       namespace "v1" do
         resources :users, only: [:index, :show]
-        resources :itineraries, only: [:index]
+        # resources :itineraries, only: [:index]
 
         get "/current-user", to: "users#user"
 
         #all itineraries for one user
-        get "users/:id/itineraries", to: "itineraries#user_itineraries_index"
+        get "users/:id/itineraries", to: "itineraries#index"
 
         #one specific itinerary for a user
         get "users/:id/itineraries/:id", to: "itineraries#show"
 
         #CREATE
-        post "users/:id/itineraries/:id/days", to: "days#create"
+        post "users/:user_id/itineraries/:itinerary_id/days", to: "days#create"
+        post "users/:user_id/itineraries/:itinerary_id", to: "itineraries#create"
       end
     end
   get "*path", to: "static_pages#index"
