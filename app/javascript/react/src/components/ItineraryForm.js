@@ -6,45 +6,56 @@ class ItineraryForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      itinName:"",
-      itinNotes:""
+      name:"",
+      notes:""
     }
     this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
+    this.handleClearForm = this.handleClearForm.bind(this)
   }
 
   handleChange(event) {
     let value = event.target.value;
     let name = event.target.name;
-    this.setState({ [name]: value})
+    this.setState({ [name]: value })
   }
 
+  handleClearForm(event) {
+    event.preventDefault();
+    this.setState({
+      name:"",
+      notes:""
+    })
+  };
+
+
   handleSubmit(event) {
-    event.preventDefault()
+    event.preventDefault();
     const formPayload = {
-      itinName: this.state.itinName,
-      itinNotes: this.state.itinNotes
+        name: this.state.name,
+        notes: this.state.notes
     }
     this.props.addItin(formPayload)
+    this.handleClearForm(event);
   }
 
   render() {
     return(
-      <form onSubmit={this.handleSubmit}>
+      <form className="callout" onSubmit={this.handleSubmit}>
         <TextInputField
-          content={this.state.itinName}
+          content={this.state.name}
           label="Itinerary Name"
-          name="itinName"
+          name="name"
           handleChange={this.handleChange}
         />
         <TextInputField
-          content={this.state.itinNotes}
+          content={this.state.notes}
           label="Itinerary Notes"
-          name="itinNotes"
+          name="notes"
           handleChange={this.handleChange}
         />
-        <div>
-          <input type="submit" value="Submit"/>
+        <div className="submit-button">
+          <input className= "button" type="submit" value="Submit"/>
         </div>
       </form>
     )

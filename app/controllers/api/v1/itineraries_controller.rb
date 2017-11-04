@@ -1,5 +1,6 @@
 class Api::V1::ItinerariesController < ApplicationController
-  protect_from_forgery unless: -> { request.format.json? }
+  skip_before_action :verify_authenticity_token, only: [:create, :update, :destroy]
+  # protect_from_forgery unless: -> { request.format.json? }
 
   def index
     user_id = params[:id]
@@ -10,8 +11,15 @@ class Api::V1::ItinerariesController < ApplicationController
   end
 
   def create
-    @itinerary = Itinerary.new(itinerary_params)
-    @itinerary.user = current_user
+    body = JSON.parse(request.body.read)
+    body.merge!(user: current_user)
+
+    @itinerary = Itinerary.new(body)
+    if @itinerary.save
+      render json: {message: "Itinerary saved"}
+    else
+      render json: {message: "Itinerary not saved"}
+    end
   end
 
   def show
@@ -20,7 +28,10 @@ class Api::V1::ItinerariesController < ApplicationController
     render json: @itinerary
   end
 
-  def itinerary_params
-    params.permit(:user_id, :itinerary_id)
-  end
+
+
+  # def itinerary_params
+  #   params.require(:itinerary).permit(:user_id, :itinName, :itinNotes)
+  #   # params.permit(:user_id, :itinName, :itinNotes, :itinerary)
+  # end
 end

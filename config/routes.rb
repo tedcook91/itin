@@ -20,7 +20,7 @@ Rails.application.routes.draw do
 
         #CREATE
         post "users/:user_id/itineraries/:itinerary_id/days", to: "days#create"
-        post "users/:user_id/itineraries/:itinerary_id", to: "itineraries#create"
+        post "users/:user_id/itineraries/", to: "itineraries#create"
       end
     end
   get "*path", to: "static_pages#index"

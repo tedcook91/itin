@@ -35,7 +35,8 @@ ActiveRecord::Schema.define(version: 20171031171104) do
 
   create_table "itineraries", force: :cascade do |t|
     t.bigint "user_id", null: false
-    t.integer "days", null: false
+    t.text "name", null: false
+    t.integer "days"
     t.text "notes"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

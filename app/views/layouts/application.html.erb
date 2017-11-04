@@ -13,16 +13,17 @@
   </head>
 
   <body>
-
-    <div id="app">
-      <%= yield %>
-    </div>
-    <%= javascript_include_tag "application" %>
+    <div class= "top-bar">
     <% if current_user  %>
       <h3>Welcome, <%= "#{current_user.first_name} #{current_user.last_name}" %></h3>
       <%= link_to "Logout", logout_path %>
       <% else %>
       <%= link_to "Sign in with Google", "/auth/google" %>
     <% end %>
+  </div>
+    <div id="app">
+      <%= yield %>
+    </div>
+    <%= javascript_include_tag "application" %>
   </body>
 </html>

@@ -1,16 +1,14 @@
-import React from "react";
+import React from 'react';
 
 const TextInputField = props => {
   return(
-    <div>
-      <label onChange={props.handleChange}>{props.label}
-        <input
-          name={props.name}
-          type="text"
-          value={props.value}
-        />
-      </label>
-    </div>
+    <label onChange={props.handleChange}>{props.label}
+      <input
+        name={props.name}
+        type='text'
+        value={props.content}
+      />
+    </label>
   )
 }
 

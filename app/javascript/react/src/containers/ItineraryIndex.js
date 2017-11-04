@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
 import NavBar from '../components/NavBar';
 import ItineraryForm from '../components/ItineraryForm';
+import ItineraryTile from '../components/ItineraryTile';
 
 class ItineraryIndex extends Component {
   constructor(props) {
     super(props);
     this.state = {
       userId: props.match.params.id,
-      itineraries: {}
+      itineraries: []
     }
     this.fetchUser = this.fetchUser.bind(this)
     this.fetchItins = this.fetchItins.bind(this)
@@ -15,16 +16,16 @@ class ItineraryIndex extends Component {
   }
 
   componentDidMount() {
-    this.addItin()
     this.fetchUser()
     this.fetchItins()
   }
 
   addItin(formPayload) {
     // May need to end this with .json
-    fetch(`/api/v1/users/${this.state.userId}/itineraries/${this.state.itinId}`, {
+    fetch(`/api/v1/users/${this.state.userId}/itineraries`, {
       credentials: "same-origin",
       method: "POST",
+      headers: {"Content-Type": "application/json"},
       body: JSON.stringify(formPayload)
     }).then(() => {
       this.fetchItins()
@@ -55,25 +56,21 @@ class ItineraryIndex extends Component {
 
 
   render() {
+    let addItin = (formPayload) => this.addItin(formPayload)
     let itineraries = this.state.itineraries.map(itinerary =>
-      <ItineraryComponent
+      <ItineraryTile
       id={itinerary.id}
       key={itinerary.id}
       notes={itinerary.notes}
       />
     )
-
-    let itinForm = null
-    if (this.props.showNewItin) {
-      itinForm = <ItineraryForm addItin={this.addItin} />
-    }
     return(
       <div>
         <div>
-          THIS IS THE ITIN INDEX PAGE
+          Your Itineraries
         </div>
-        {itinForm}
         {itineraries}
+        <ItineraryForm addItin={addItin} />
       </div>
     )
   }
