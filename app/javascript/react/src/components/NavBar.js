@@ -12,10 +12,15 @@ class NavBar extends Component {
     this.handleSignInOut = this.handleSignInOut.bind(this)
     this.handleSignIn = this.handleSignIn.bind(this)
     this.handleSignOut = this.handleSignOut.bind(this)
+    this.fetchCurrentUser = this.fetchCurrentUser.bind(this)
   }
 
   componentDidMount() {
     this.fetchCurrentUser()
+  }
+
+  handleSignIn() {
+    window.location.replace("/auth/google")
   }
 
   fetchCurrentUser() {
@@ -29,21 +34,8 @@ class NavBar extends Component {
       })
   }
 
-  handleSignIn() {
-    window.location.replace("/auth/google")
-  }
-
-
   handleSignOut() {
-      fetch("/users/sign_out", {
-        credentials: "same-origin",
-        method: "DELETE",
-        headers: {"Content-Type": "application/json"}
-      }).then(() => {
-        this.setState({
-          currentUser: null
-        })
-      })
+    window.location.replace("/logout")
     }
 
   handleSignInOut() {

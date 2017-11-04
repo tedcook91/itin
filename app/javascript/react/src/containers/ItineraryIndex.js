@@ -21,7 +21,6 @@ class ItineraryIndex extends Component {
   }
 
   addItin(formPayload) {
-    // May need to end this with .json
     fetch(`/api/v1/users/${this.state.userId}/itineraries`, {
       credentials: "same-origin",
       method: "POST",
@@ -68,9 +67,6 @@ class ItineraryIndex extends Component {
     )
     return(
       <div>
-        <nav>
-          <NavBar />
-        </nav>
         <div>
           Your Itineraries
         </div>

@@ -27,7 +27,7 @@ const NavComponent = props => {
         <a href='/'>
           <div>Home</div>
         </a>
-        <div onClick={props.handleSignOut}>Sign out</div>
+        <div onClick={props.handleSignIn}>Sign in</div>
       </div>
     )
   }
