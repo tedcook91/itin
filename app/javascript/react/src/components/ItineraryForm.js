@@ -41,23 +41,30 @@ class ItineraryForm extends Component {
 
   render() {
     return(
-      <form className="callout" onSubmit={this.handleSubmit}>
-        <TextInputField
-          content={this.state.name}
-          label="Itinerary Name"
-          name="name"
-          handleChange={this.handleChange}
-        />
-        <TextInputField
-          content={this.state.notes}
-          label="Itinerary Notes"
-          name="notes"
-          handleChange={this.handleChange}
-        />
-        <div className="submit-button">
-          <input className= "button" type="submit" value="Submit"/>
+      <div className="grid-container">
+        <div className="grid-x grid-padding-x">
+          <div className="medium-4 cell">
+            <form className="callout" onSubmit={this.handleSubmit}>
+              <TextInputField
+                content={this.state.name}
+                label="Itinerary Name"
+                name="name"
+                handleChange={this.handleChange}
+              />
+              <TextInputField
+                content={this.state.notes}
+                label="Itinerary Notes"
+                name="notes"
+                handleChange={this.handleChange}
+              />
+
+              <div className="submit-button">
+                <input className= "button" type="submit" value="Submit"/>
+              </div>
+            </form>
+          </div>
         </div>
-      </form>
+      </div>
     )
   }
 }

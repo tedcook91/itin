@@ -58,18 +58,23 @@ class ItineraryIndex extends Component {
   render() {
     let addItin = (formPayload) => this.addItin(formPayload)
     let itineraries = this.state.itineraries.map(itinerary =>
+
       <ItineraryTile
       id={itinerary.id}
       key={itinerary.id}
+      name={itinerary.name}
       notes={itinerary.notes}
       />
     )
     return(
       <div>
+        <nav>
+          <NavBar />
+        </nav>
         <div>
           Your Itineraries
         </div>
-        {itineraries}
+            {itineraries}
         <ItineraryForm addItin={addItin} />
       </div>
     )
