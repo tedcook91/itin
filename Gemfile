@@ -17,6 +17,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'foundation-rails'
 gem 'omniauth-google-oauth2'
 gem 'figaro'
+gem 'jquery-rails'
 # gem 'active_model_serializers'
 gem 'faker'
 
