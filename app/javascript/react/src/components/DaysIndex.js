@@ -4,7 +4,7 @@ const DaysIndex = props => {
 
   let days = props.days.map(day => {
     return(
-      <DayTile
+      <ActivityTile
         key={day.id}
         activityType={day.activityType}
         body={day.body}

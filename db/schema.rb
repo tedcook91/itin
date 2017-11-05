@@ -16,21 +16,13 @@ ActiveRecord::Schema.define(version: 20171031171104) do
   enable_extension "plpgsql"
 
   create_table "activities", force: :cascade do |t|
-    t.bigint "day_id", null: false
+    t.bigint "itinerary_id", null: false
     t.string "location"
     t.string "type"
-    t.text "notes"
+    t.text "body"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["day_id"], name: "index_activities_on_day_id"
-  end
-
-  create_table "days", force: :cascade do |t|
-    t.bigint "itinerary_id", null: false
-    t.text "notes"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["itinerary_id"], name: "index_days_on_itinerary_id"
+    t.index ["itinerary_id"], name: "index_activities_on_itinerary_id"
   end
 
   create_table "itineraries", force: :cascade do |t|

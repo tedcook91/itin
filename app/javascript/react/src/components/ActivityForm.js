@@ -1,12 +1,13 @@
 import React from "react";
 import TextInputField from "../components/TextInputField";
 
-class DayForm extends React.Component {
+class ActivityForm extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      activityType:"",
-      body:""
+      type:"",
+      body:"",
+      location:""
     }
     this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
@@ -58,4 +59,4 @@ class DayForm extends React.Component {
   }
 }
 
-export default DayForm;
+export default ActivityForm;

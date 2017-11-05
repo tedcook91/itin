@@ -1,6 +1,6 @@
 import React from 'react';
 
-const DayTile = props => {
+const ActivityTile = props => {
   let textArray = [props.activityType, props.body]
 
   return(
@@ -8,4 +8,4 @@ const DayTile = props => {
   )
 }
 
-export default DayTile;
+export default ActivityTile;

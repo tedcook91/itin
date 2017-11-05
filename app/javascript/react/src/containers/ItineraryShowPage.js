@@ -1,39 +1,47 @@
 import React, { Component } from 'react'
-import DayContainer from '../containers/DayContainer'
+// import DayContainer from '../containers/DayContainer'
 
 
 class ItineraryShowPage extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      showNewDay: false,
-      activity: {},
-      body: {}
-
+      userId: props.match.params.id,
+      addDay: false
     }
-    // this.addDay = this.addDay.bind(this)
-    this.toggleShowNewDay = this.toggleShowNewDay.bind(this)
+    this.fetchUser = this.fetchUser.bind(this)
+    this.addDay = this.addDay.bind(this)
   }
 
-  toggleShowNewDay() {
-    this.setState({
-      showNewDay: !this.state.showNewDay
-    })
+  componentDidMount() {
+    this.fetchUser()
+    this.addDay()
   }
+
+
+
+  // toggleShowNewDay() {
+  //   this.setState({
+  //     showNewDay: !this.state.showNewDay
+  //   })
+  // }
+
+
 
   render() {
 
     return(
       <div>
-        <DayContainer
-          activityType={this.state.activityType}
-          body={this.state.body}
-          toggleShowNewDay={this.toggleShowNewDay}
-          showNewDay={this.state.showNewDay}
-        />
+        This is the Itin Show Page
       </div>
     )
   }
 }
 
 export default ItineraryShowPage
+{/* <DayContainer
+  activityType={this.state.activityType}
+  body={this.state.body}
+  toggleShowNewDay={this.toggleShowNewDay}
+  showNewDay={this.state.showNewDay}
+/> */}

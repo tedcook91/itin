@@ -70,7 +70,7 @@ class ItineraryIndex extends Component {
         <div>
           Your Itineraries
         </div>
-            {itineraries}
+        {itineraries}
         <ItineraryForm addItin={addItin} />
       </div>
     )

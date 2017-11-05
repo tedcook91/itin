@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import DayForm from "../components/DayForm";
+import ActivityForm from "../components/ActivityForm";
 import DaysIndex from "../components/DaysIndex"
 
 
@@ -7,26 +7,36 @@ class DayContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      userId: props.match.params.id,
       days: []
     }
-    // this.addDay = this.addDay.bind(this)
+    this.fetchDays = this.fetchDays.bind(this)
+  }
 
+  componentDidMount() {
+    this.fetchDays()
+  }
+
+  fetchUser() {
+    fetch(`/api/v1/users/${this.state.userId}`, {
+      credentials: "same-origin"
+    }).then(res => res.json())
+    .then(data => {
+      this.setState({
+        user:data
+      })
+    })
   }
 
   render() {
-    // let dayForm = null
-    // if (this.props.showNewDay) {
-    //   dayForm = <DayForm addDay ={this.addDay} />
-    // }
     return(
       <div>
         <h1>Days of Trip</h1>
         <hr />
-        <DaysIndex
-          days={this.state.days}
+        <ActivityTile
         />
         <hr />
-        <DayForm
+        <ActivityForm
           // addNewDay={addNewDay}
         />
       </div>
