@@ -4,13 +4,13 @@ const ItineraryTile = props => {
 
 
   return(
-      <div className="small-4 columns">
+      <div className="medium-4 columns">
         <div className="row">
-        <div className="card">
-          <div className="card-divider">
+        <div className="itin-card">
+          <div className="card-header">
             <h4>{props.name}</h4>
           </div>
-          <div className="card-section">
+          <div className="card-paragraph">
             <p>{props.notes}</p>
           </div>
         </div>

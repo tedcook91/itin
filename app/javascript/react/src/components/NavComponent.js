@@ -4,31 +4,34 @@ const NavComponent = props => {
   let bar
   if (props.currentUser) {
     bar = (
-      <div>
-        <a href={`/${props.currentUser.id}`}>
-          <div>
-            {props.currentUser.first_name}
-          </div>
-          <div>
-            {props.currentUser.email}
-          </div>
-        </a>
-        <a href='/'>
-          Home
-        </a>
-        <div onClick={props.handleSignOut}>
-          Sign out
+      <div className="contain-to-grid">
+      <nav className="top-bar" data-topbar role = "navigation">
+        <div className="active">
+          <span>
+          <h2 className="left" ><a href='/'> Home </a></h2>
+          <h2 className="left" ><a href={`/user/${props.currentUser.id}/itineraries`}> Itineraries </a></h2>
+        </span>
         </div>
-    </div>
+        <div>
+        <a href={`/${props.currentUser.id}`}> {props.currentUser.first_name} </a>
+        </div>
+        <div onClick={props.handleSignOut} className="right">
+          <h5>Sign out</h5>
+        </div>
+    </nav>
+  </div>
+
     )
   } else {
     bar = (
-      <div>
-        <a href='/'>
-          <div>Home</div>
-        </a>
-        <div onClick={props.handleSignIn}>Sign in</div>
+      <div className="contain-to-grid">
+        <nav className="top-bar" data-topbar role ="navigation">
+      <div className="active">
+        <h2 className="left" ><a href='/'>Home</a></h2>
+        <h5 onClick={props.handleSignIn} className="right">Sign in</h5>
       </div>
+    </nav>
+    </div>
     )
   }
 
@@ -36,6 +39,7 @@ const NavComponent = props => {
     <div>
       {bar}
     </div>
+
   )
 }
 
