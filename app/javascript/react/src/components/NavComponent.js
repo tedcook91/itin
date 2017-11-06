@@ -6,18 +6,11 @@ const NavComponent = props => {
     bar = (
       <div className="contain-to-grid">
         <nav className="top-bar" data-topbar role = "navigation">
-          <ul class="title-area">
+          <ul className="title-area">
             <li className="name">
-              <a href='/'><h2>Home</h2></a>
+              <a href='/'><h2></h2></a>
             </li>
           </ul>
-          <section className="top-bar-section">
-            <div className="active">
-              <span>
-                <h2 className="left" ><a href={`/users/${props.currentUser.id}/itineraries`}> Itineraries </a></h2>
-              </span>
-            </div>
-          </section>
           <section className="top-bar-section">
             <ul className="right">
               <li><a href={`/${props.currentUser.id}`}> {props.currentUser.first_name} </a></li>

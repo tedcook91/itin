@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 20171031171104) do
   create_table "activities", force: :cascade do |t|
     t.bigint "itinerary_id", null: false
     t.string "location"
-    t.string "type"
+    t.string "event"
     t.text "body"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

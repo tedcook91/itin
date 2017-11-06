@@ -25,7 +25,9 @@ class Api::V1::ItinerariesController < ApplicationController
   def show
     @itinerary = Itinerary.find(params[:id])
 
-    render json: @itinerary
+    activities = @itinerary.activities
+
+    render json: {itinerary: @itinerary, activities: activities}
   end
 
 

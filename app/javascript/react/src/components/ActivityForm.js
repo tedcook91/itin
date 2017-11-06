@@ -5,7 +5,7 @@ class ActivityForm extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      type:"",
+      event:"",
       body:"",
       location:""
     }
@@ -22,7 +22,7 @@ class ActivityForm extends React.Component {
   handleSubmit(event) {
     event.preventDefault()
     const formPayload = {
-      activityType: this.state.activityType,
+      event: this.state.event,
       body: this.state.body,
       location: this.state.location
     }
@@ -33,9 +33,9 @@ class ActivityForm extends React.Component {
     return(
       <form onSubmit={this.handleSubmit}>
         <TextInputField
-          content={this.state.activityType}
-          label="Activity Type"
-          name="activityType"
+          content={this.state.event}
+          label="Event"
+          name="event"
           handleChange={this.handleChange}
         />
         <TextInputField

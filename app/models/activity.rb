@@ -6,5 +6,5 @@ class Activity < ApplicationRecord
   # validates :type, length: {within: 3..8}
   # validates :notes, length: (maximum: 40)
 
-  validates_presence_of :location, :type
+  validates_presence_of :location, :event
 end

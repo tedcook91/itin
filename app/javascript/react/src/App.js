@@ -11,8 +11,8 @@ const App = props =>
     <div>
       <Switch>
         <Route exact path="/" component={About} />
-        <Route path="/users/:id/itineraries" component={ItineraryIndex} />
         <Route path="/users/:id/itineraries/:itinerary_id" component={ItineraryShowPage} />
+        <Route path="/users/:id/itineraries" component={ItineraryIndex} />
       </Switch>
     </div>
   </div>
