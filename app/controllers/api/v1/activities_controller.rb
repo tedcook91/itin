@@ -1,10 +1,19 @@
 class Api::V1::ActivitiesController < ApplicationController
   protect_from_forgery unless: -> { request.format.json? }
 
-  def index
-    itinerary = Itinerary.find(params[:itinerary_id])
-    render json: itinerary.activities
+  def show
+    @activity = Activity.find(params[:itinerary_id])
+
+    render json: @activity
   end
+
+  # def index
+  #   itinerary = Itinerary.find(params[:itinerary_id])
+  #   render json: itinerary.activities
+  #   binding.pry
+  # end
+
+
 
   def create
     activity = Activity.new(activity_params)

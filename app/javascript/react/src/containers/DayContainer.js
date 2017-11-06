@@ -8,9 +8,11 @@ class DayContainer extends Component {
     super(props);
     this.state = {
       userId: props.match.params.id,
-      days: []
+      itineraryId: props.match.params.itinerary_id,
+      activities: []
     }
-    this.fetchDays = this.fetchDays.bind(this)
+    this.fetchUser = this.fetchUser.bind(this)
+    this.fetchActivities = this.fetchActivities.bind(this)
   }
 
   componentDidMount() {
@@ -24,6 +26,17 @@ class DayContainer extends Component {
     .then(data => {
       this.setState({
         user:data
+      })
+    })
+  }
+
+  fetchActivities() {
+    fetch(`/api/v1/users/${this.state.userId}/itineraries/${this.state.itinerary_id}`, {
+      credentials: "same-origin"
+    }).then(res => res.json())
+    .then(data => {
+      this.setState({
+        itinerary: data
       })
     })
   }
