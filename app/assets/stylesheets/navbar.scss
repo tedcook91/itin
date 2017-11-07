@@ -1,8 +1,42 @@
-body, h1, h2, h3, h4, h5, a {
+body, h1, h2, h3, h4, h5, p {
   font-family: 'Montserrat', sans-serif;
-  color: white;
+  color: black;
 }
 
-.left {
-  
+ul {
+list-style-type: none;
+margin: 0;
+padding: 0;
+overflow: hidden;
+background-color: #333;
+font-size: 28px;
+}
+
+li {
+  float: left;
+}
+
+.right {
+  float: right;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+a:hover:not(.active) {
+  background-color: #111;
+}
+
+.login:hover:not(.active) {
+  background-color: #111;
 }

@@ -26,7 +26,7 @@ class ActivityForm extends React.Component {
       body: this.state.body,
       location: this.state.location
     }
-    // this.props.addActivity(formPayload)
+    this.props.addActivity(formPayload)
   }
 
   render() {
@@ -48,7 +48,7 @@ class ActivityForm extends React.Component {
           content={this.state.location}
           label="Location"
           name="location"
-          handleChange={this.state.handleChange}
+          handleChange={this.handleChange}
         />
 
         <div>

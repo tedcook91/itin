@@ -13,6 +13,7 @@ class ItineraryShowPage extends Component {
     }
     this.fetchUser = this.fetchUser.bind(this)
     this.fetchActivities = this.fetchActivities.bind(this)
+    this.addActivity = this.addActivity.bind(this)
   }
 
   componentDidMount() {
@@ -32,7 +33,6 @@ class ItineraryShowPage extends Component {
   }
 
   fetchActivities() {
-    // debugger;
     fetch(`/api/v1/users/${this.state.userId}/itineraries/${this.state.itineraryId}`, {
       credentials: "same-origin"
     })
@@ -40,15 +40,24 @@ class ItineraryShowPage extends Component {
     .then(data => {
       this.setState({
         activities: data.activities
-
       })
+    })
+  }
+
+  addActivity(formPayload) {
+    fetch(`/api/v1/users/${this.state.userId}/itineraries/${this.state.itineraryId}`, {
+      credentials: "same-origin",
+      method: "POST",
+      headers: {"Content-Type": "application/json"},
+      body: JSON.stringify(formPayload)
+    }).then(() => {
+      this.fetchActivities()
     })
   }
 
 
 
   render() {
-    debugger;
     let activities = this.state.activities.map(activity =>
       <ActivityTile
         id={activity.id}

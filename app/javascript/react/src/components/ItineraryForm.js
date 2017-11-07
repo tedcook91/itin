@@ -43,7 +43,7 @@ class ItineraryForm extends Component {
     return(
       <div className="grid-container">
         <div className="grid-x grid-padding-x">
-          <div className="medium-4 cell">
+          <div className="medium-3 cell">
             <form className="callout" onSubmit={this.handleSubmit}>
               <TextInputField
                 content={this.state.name}

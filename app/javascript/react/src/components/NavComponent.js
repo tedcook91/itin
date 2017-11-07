@@ -4,35 +4,30 @@ const NavComponent = props => {
   let bar
   if (props.currentUser) {
     bar = (
-      <div className="contain-to-grid">
-        <nav className="top-bar" data-topbar role = "navigation">
-          <ul className="title-area">
-            <li className="name">
-              <a href='/'><h2></h2></a>
-            </li>
-          </ul>
-          <section className="top-bar-section">
-            <ul className="right">
-              <li><a href={`/${props.currentUser.id}`}> {props.currentUser.first_name} </a></li>
-                <div onClick={props.handleSignOut}>
-                  <li><h5>Sign out</h5></li>
-                </div>
-            </ul>
-          </section>
-        </nav>
-      </div>
-
+      <nav>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href={`/users/${props.currentUser.id}/itineraries`}>Itineraries</a></li>
+          <li><a href="/about">About</a></li>
+          <div className="right">
+            <ul>
+          <li>Welcome, {props.currentUser.first_name}</li>
+          <li onClick={props.handleSignOut}>Sign out</li>
+        </ul>
+        </div>
+        </ul>
+      </nav>
     )
   } else {
+
     bar = (
-      <div className="contain-to-grid">
-        <nav className="top-bar" data-topbar role ="navigation">
-          <div className="active">
-            <h2 className="left" ><a href='/'>Home</a></h2>
-            <h5 onClick={props.handleSignIn} className="right">Sign in</h5>
-          </div>
-        </nav>
-      </div>
+      <nav>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/about">About</a></li>
+          <li onClick={props.handleSignIn} className="right">Sign in</li>
+        </ul>
+      </nav>
     )
   }
 
@@ -40,8 +35,8 @@ const NavComponent = props => {
     <div>
       {bar}
     </div>
-
   )
 }
+
 
 export default NavComponent

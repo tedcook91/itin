@@ -13,6 +13,7 @@ const App = props =>
         <Route exact path="/" component={About} />
         <Route path="/users/:id/itineraries/:itinerary_id" component={ItineraryShowPage} />
         <Route path="/users/:id/itineraries" component={ItineraryIndex} />
+        <Route path="/about" component={About} />
       </Switch>
     </div>
   </div>
