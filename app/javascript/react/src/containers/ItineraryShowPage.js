@@ -8,14 +8,13 @@ class ItineraryShowPage extends Component {
     super(props);
     this.state = {
       userId: props.match.params.id,
-      itineraryId: props.match.params.itinerary_id,
+      itineraryId: this.props.match.params.itinerary_id,
       activities: []
     }
     this.fetchUser = this.fetchUser.bind(this)
     this.fetchActivities = this.fetchActivities.bind(this)
     this.addActivity = this.addActivity.bind(this)
   }
-
   componentDidMount() {
     this.fetchUser()
     this.fetchActivities()
@@ -45,7 +44,9 @@ class ItineraryShowPage extends Component {
   }
 
   addActivity(formPayload) {
-    fetch(`/api/v1/users/${this.state.userId}/itineraries/${this.state.itineraryId}`, {
+    console.log(formPayload)
+    fetch(`/api/v1/activities`, {    
+  // fetch(`/api/v1/users/${this.state.userId}/itineraries/${this.state.itineraryId}`, {
       credentials: "same-origin",
       method: "POST",
       headers: {"Content-Type": "application/json"},
@@ -58,6 +59,7 @@ class ItineraryShowPage extends Component {
 
 
   render() {
+    let addActivity = (formPayload) => this.addActivity(formPayload)
     let activities = this.state.activities.map(activity =>
       <ActivityTile
         id={activity.id}
@@ -74,7 +76,9 @@ class ItineraryShowPage extends Component {
         This is the Itin Show Page
         </div>
       {activities}
-      <ActivityForm />
+      <ActivityForm
+        itineraryId={this.state.itineraryId}
+        addActivity={addActivity}/>
       </div>
     )
   }

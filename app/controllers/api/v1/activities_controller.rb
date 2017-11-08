@@ -1,20 +1,28 @@
 class Api::V1::ActivitiesController < ApplicationController
-  protect_from_forgery unless: -> { request.format.json? }
+  skip_before_action :verify_authenticity_token, only: [:create, :update, :destroy]
+  # protect_from_forgery unless: -> { request.format.json? }
 
   def index
-    itinerary = Itinerary.find(params[:itinerary_id])
-    render json: itinerary.activities
+    # itinerary = Itinerary.find(params[:itinerary_id])
+    render json: Activity.all
   end
 
   def create
+    # binding.pry
     activity = Activity.new(activity_params)
-    itinerary = Itinerary.find(params[:itinerary_id])
+    # itinerary = Itinerary.find(params[:itinerary_id])
 
-    activity.itinerary = itinerary
-    activity.user = current_user
+    activity.save
+
+
+
+    # activity = Activity.new(activity_params)
+    # itinerary = Itinerary.find(params[:itinerary_id])
+    #
+    # activity.itinerary = itinerary
   end
 
   def activity_params
-    params.permit(:location,:event,:body)
+    params.permit(:location,:event,:notes, :itinerary_id)
   end
 end

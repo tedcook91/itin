@@ -10,11 +10,9 @@ const NavComponent = props => {
           <li><a href={`/users/${props.currentUser.id}/itineraries`}>Itineraries</a></li>
           <li><a href="/about">About</a></li>
           <div className="right">
-            <ul>
-          <li>Welcome, {props.currentUser.first_name}</li>
-          <li onClick={props.handleSignOut}>Sign out</li>
-        </ul>
-        </div>
+            <li>Welcome, {props.currentUser.first_name}</li>
+            <li onClick={props.handleSignOut}><a>Sign out</a></li>
+          </div>
         </ul>
       </nav>
     )
