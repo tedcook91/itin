@@ -66,6 +66,8 @@ class ItineraryShowPage extends Component {
         event={activity.event}
         location={activity.location}
         body={activity.body}
+        addActivity={this.addActivity}
+        itineraryId={this.state.itineraryId}
       />
 
 
@@ -74,9 +76,7 @@ class ItineraryShowPage extends Component {
     return(
       <div>
       {activities}
-      <ActivityForm
-        itineraryId={this.state.itineraryId}
-        addActivity={addActivity}/>
+
       </div>
 
     )
@@ -84,3 +84,6 @@ class ItineraryShowPage extends Component {
 }
 
 export default ItineraryShowPage
+{/* <ActivityForm
+  itineraryId={this.state.itineraryId}
+  addActivity={addActivity}/> */}

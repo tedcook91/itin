@@ -18,6 +18,7 @@ class Api::V1::DaysController < ApplicationController
     else
       render json: {message: "Day not saved"}
     end
+  end
 
   def day_params
     params.permit(:notes)

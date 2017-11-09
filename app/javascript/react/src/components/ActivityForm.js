@@ -44,37 +44,33 @@ class ActivityForm extends React.Component {
   render() {
     // console.log(this.state)
     return(
-      <div className="grid-container">
-        <div className="grid-x grid-padding-x">
-          <div className="medium-3 cell">
-            <form onSubmit={this.handleSubmit}>
-              <TextInputField
-                content={this.state.event}
-                label="Event"
-                name="event"
-                handleChange={this.handleChange}
-              />
-              <TextInputField
-                content={this.state.location}
-                label="Location"
-                name="location"
-                handleChange={this.handleChange}
-              />
-              <TextInputField
-                content={this.state.body}
-                label="Notes"
-                name="body"
-                handleChange={this.handleChange}
-              />
+      <div>
+        <form onSubmit={this.handleSubmit}>
+          <TextInputField
+            content={this.state.event}
+            label="Event"
+            name="event"
+            handleChange={this.handleChange}
+          />
+          <TextInputField
+            content={this.state.location}
+            label="Location"
+            name="location"
+            handleChange={this.handleChange}
+          />
+          <TextInputField
+            content={this.state.body}
+            label="Notes"
+            name="body"
+            handleChange={this.handleChange}
+          />
 
-              <div className="submit-button">
-                <input className= "button" type="submit" value="Submit" />
-              </div>
-            </form>
+          <div className="submit-button">
+            <input className= "button" type="submit" value="Submit" />
           </div>
-        </div>
+        </form>
       </div>
-    )
+    )   
   }
 }
 
