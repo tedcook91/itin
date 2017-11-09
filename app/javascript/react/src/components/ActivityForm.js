@@ -42,6 +42,7 @@ class ActivityForm extends React.Component {
   }
 
   render() {
+    console.log(this.state)
     return(
       <div className="grid-container">
         <div className="grid-x grid-padding-x">
@@ -54,15 +55,15 @@ class ActivityForm extends React.Component {
                 handleChange={this.handleChange}
               />
               <TextInputField
-                content={this.state.body}
-                label="Body"
-                name="body"
-                handleChange={this.handleChange}
-              />
-              <TextInputField
                 content={this.state.location}
                 label="Location"
                 name="location"
+                handleChange={this.handleChange}
+              />
+              <TextInputField
+                content={this.state.body}
+                label="Notes"
+                name="body"
                 handleChange={this.handleChange}
               />
 

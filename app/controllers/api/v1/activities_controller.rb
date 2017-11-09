@@ -23,6 +23,6 @@ class Api::V1::ActivitiesController < ApplicationController
   end
 
   def activity_params
-    params.permit(:location,:event,:notes, :itinerary_id)
+    params.permit(:location,:event,:body, :itinerary_id)
   end
 end

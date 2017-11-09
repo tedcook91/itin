@@ -4,7 +4,7 @@ class CreateActivities < ActiveRecord::Migration[5.1]
       t.belongs_to :itinerary, null: false
       t.string :location
       t.string :event
-      t.text :notes
+      t.text :body
 
       t.timestamps null: false
     end

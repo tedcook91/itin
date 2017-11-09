@@ -67,18 +67,18 @@ class ItineraryShowPage extends Component {
         location={activity.location}
         body={activity.body}
       />
+
+
     )
 
     return(
       <div>
-        <div>
-        This is the Itin Show Page
-        </div>
       {activities}
       <ActivityForm
         itineraryId={this.state.itineraryId}
         addActivity={addActivity}/>
       </div>
+
     )
   }
 }

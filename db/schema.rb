@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 20171031171104) do
     t.bigint "itinerary_id", null: false
     t.string "location"
     t.string "event"
-    t.text "notes"
+    t.text "body"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["itinerary_id"], name: "index_activities_on_itinerary_id"

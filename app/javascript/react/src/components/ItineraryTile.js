@@ -7,10 +7,10 @@ const ItineraryTile = props => {
         <div className="medium-3 columns">
           <div className="row">
           <div className="itin-card">
-            <div className="card-header">
+            <div>
               <h4>{props.name}</h4>
             </div>
-            <div className="card-paragraph">
+            <div>
               <p>{props.notes}</p>
             </div>
           </div>
