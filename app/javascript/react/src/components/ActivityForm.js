@@ -42,7 +42,7 @@ class ActivityForm extends React.Component {
   }
 
   render() {
-    console.log(this.state)
+    // console.log(this.state)
     return(
       <div className="grid-container">
         <div className="grid-x grid-padding-x">

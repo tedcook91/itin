@@ -1,4 +1,4 @@
-h1, h2, h3, h4, h5, p {
+h1, h2, h3, h4, h5, p, a {
   font-family: 'Montserrat', sans-serif;
   color: black;
 
@@ -22,6 +22,7 @@ font-size: 28px;
 
 li {
   float: left;
+  font-family: 'Montserrat', sans-serif;
 }
 
 li.right {
@@ -32,6 +33,7 @@ li.right {
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
+  font-family: 'Montserrat', sans-serif;
 }
 
 li a {
