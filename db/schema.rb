@@ -10,19 +10,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171031171104) do
+ActiveRecord::Schema.define(version: 20171109224414) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "activities", force: :cascade do |t|
-    t.bigint "itinerary_id", null: false
     t.string "location"
     t.string "event"
     t.text "body"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["itinerary_id"], name: "index_activities_on_itinerary_id"
+  end
+
+  create_table "days", force: :cascade do |t|
+    t.bigint "itinerary_id", null: false
+    t.date "date", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["itinerary_id"], name: "index_days_on_itinerary_id"
   end
 
   create_table "itineraries", force: :cascade do |t|

@@ -1,5 +1,5 @@
 class Activity < ApplicationRecord
-  belongs_to :itinerary
+  belongs_to :day
 
 
   # validates :name, length: {within: 3..15}

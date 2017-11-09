@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import ActivityTile from "../components/ActivityTile";
 import ActivityForm from "../components/ActivityForm";
+import DaysContainer from "../containers/DaysContainer";
 
 
 class ItineraryShowPage extends Component {
@@ -9,7 +10,7 @@ class ItineraryShowPage extends Component {
     this.state = {
       userId: props.match.params.id,
       itineraryId: this.props.match.params.itinerary_id,
-      activities: []
+      days: []
     }
     this.fetchUser = this.fetchUser.bind(this)
     this.fetchActivities = this.fetchActivities.bind(this)
@@ -38,7 +39,7 @@ class ItineraryShowPage extends Component {
     .then(res => res.json())
     .then(data => {
       this.setState({
-        activities: data.activities
+        days: data.days
       })
     })
   }
@@ -58,27 +59,11 @@ class ItineraryShowPage extends Component {
 
 
   render() {
-    let addActivity = (formPayload) => this.addActivity(formPayload)
-    let activities = this.state.activities.map(activity =>
-      <ActivityTile
-        id={activity.id}
-        key={activity.id}
-        event={activity.event}
-        location={activity.location}
-        body={activity.body}
-        addActivity={this.addActivity}
-        itineraryId={this.state.itineraryId}
-      />
-
-
-    )
-
+    console.log(this.state.days)
     return(
       <div>
-      {activities}
-
+        <DaysContainer />
       </div>
-
     )
   }
 }
@@ -87,3 +72,24 @@ export default ItineraryShowPage
 {/* <ActivityForm
   itineraryId={this.state.itineraryId}
   addActivity={addActivity}/> */}
+
+  // let addActivity = (formPayload) => this.addActivity(formPayload)
+  // let activities = this.state.activities.map(activity =>
+  //   <ActivityTile
+  //     id={activity.id}
+  //     key={activity.id}
+  //     event={activity.event}
+  //     location={activity.location}
+  //     body={activity.body}
+  //     addActivity={this.addActivity}
+  //     itineraryId={this.state.itineraryId}
+  //   />
+  // )
+  //
+  // return(
+  //   <div>
+  //   {activities}
+  //
+  //   </div>
+  //
+  // )
