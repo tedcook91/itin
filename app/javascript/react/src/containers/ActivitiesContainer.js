@@ -11,7 +11,7 @@ const ActivitiesContainer = props => {
         location={activity.location}
         body={activity.body}
         addActivity={this.addActivity}
-        itineraryId={this.state.itineraryId}
+        dayId={this.state.dayId}
       />
     )
   })

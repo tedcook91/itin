@@ -13,12 +13,12 @@ class ItineraryShowPage extends Component {
       days: []
     }
     this.fetchUser = this.fetchUser.bind(this)
-    this.fetchActivities = this.fetchActivities.bind(this)
+    this.fetchDays = this.fetchDays.bind(this)
     this.addActivity = this.addActivity.bind(this)
   }
   componentDidMount() {
     this.fetchUser()
-    this.fetchActivities()
+    this.fetchDays()
   }
 
   fetchUser() {
@@ -32,7 +32,7 @@ class ItineraryShowPage extends Component {
     })
   }
 
-  fetchActivities() {
+  fetchDays() {
     fetch(`/api/v1/users/${this.state.userId}/itineraries/${this.state.itineraryId}`, {
       credentials: "same-origin"
     })
@@ -45,14 +45,13 @@ class ItineraryShowPage extends Component {
   }
 
   addActivity(formPayload) {
-    console.log(formPayload)
     fetch(`/api/v1/activities`, {
       credentials: "same-origin",
       method: "POST",
       headers: {"Content-Type": "application/json"},
       body: JSON.stringify(formPayload)
     }).then(() => {
-      this.fetchActivities()
+      this.fetchDays()
     })
   }
 
@@ -62,7 +61,8 @@ class ItineraryShowPage extends Component {
     console.log(this.state.days)
     return(
       <div>
-        <DaysContainer />
+        <DaysContainer
+        days={this.state.days}/>
       </div>
     )
   }
