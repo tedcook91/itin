@@ -42,7 +42,6 @@ class ActivityForm extends React.Component {
   }
 
   render() {
-    // console.log(this.state)
     return(
       <div>
         <form onSubmit={this.handleSubmit}>
@@ -65,12 +64,12 @@ class ActivityForm extends React.Component {
             handleChange={this.handleChange}
           />
 
-          <div className="submit-button">
-            <input className= "button" type="submit" value="Submit" />
+          <div>
+            <input type="submit" value="Submit" />
           </div>
         </form>
       </div>
-    )   
+    )
   }
 }
 

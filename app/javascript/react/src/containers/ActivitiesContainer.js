@@ -14,12 +14,7 @@ const ActivitiesContainer = props => {
       />
     )
   })
-  return(
-    <ul>
-      {activities}
-    </ul>
-  )
-
+  return activities;  
 }
 
 
