@@ -21,7 +21,7 @@ class Api::V1::ItinerariesController < ApplicationController
       render json: {message: "Itinerary not saved"}
     end
   end
-
+  
   def show
     @itinerary = Itinerary.find(params[:itinerary_id])
 
@@ -39,10 +39,4 @@ class Api::V1::ItinerariesController < ApplicationController
     render json: { itinerary: itinerary_data }
   end
 
-
-
-  # def itinerary_params
-  #   params.require(:itinerary).permit(:user_id, :itinName, :itinNotes)
-  #   # params.permit(:user_id, :itinName, :itinNotes, :itinerary)
-  # end
 end

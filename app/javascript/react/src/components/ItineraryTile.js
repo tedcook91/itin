@@ -2,7 +2,6 @@ import React from 'react';
 
 const ItineraryTile = props => {
 
-
   return(
         <div className="medium-3 columns">
           <div className="row">

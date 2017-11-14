@@ -2,19 +2,27 @@ import React from 'react';
 import DayTile from '../components/DayTile';
 
 const DaysContainer = props => {
-  // console.log(props)
+
   let days = props.days.map(day => {
+    console.log(day);
     return(
       <DayTile
-        id={days.id}
-        itineraryId={props.itineraryId}
-        date={days.date}
+        itineraryId={day.itineraryId}
+        date={day.date}
+        activities={day[1]}
       />
     )
     return(
-      {days}
+      <div>
+        {days}
+          <ActivityForm
+            itineraryId={day.itineraryId}
+            addActivity={day.addActivity}
+          />
+      </div>
     )
   })
+  return days;
 }
 
 export default DaysContainer;

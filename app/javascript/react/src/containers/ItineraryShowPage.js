@@ -39,7 +39,7 @@ class ItineraryShowPage extends Component {
     .then(res => res.json())
     .then(data => {
       this.setState({
-        days: data.days
+        days: data.itinerary.days
       })
     })
   }
@@ -58,38 +58,18 @@ class ItineraryShowPage extends Component {
 
 
   render() {
-    console.log(this.state.days)
-    return(
+    console.log(this.state)
+    let addActivity = (formPayload) => this.addActivity(formPayload)
+    return(this.state.days.length > 0 &&
       <div>
         <DaysContainer
-        days={this.state.days}/>
+          days={this.state.days}
+          addActivity={this.addActivity}
+          itineraryId={this.state.itineraryId}
+        />
       </div>
     )
   }
 }
 
 export default ItineraryShowPage
-{/* <ActivityForm
-  itineraryId={this.state.itineraryId}
-  addActivity={addActivity}/> */}
-
-  // let addActivity = (formPayload) => this.addActivity(formPayload)
-  // let activities = this.state.activities.map(activity =>
-  //   <ActivityTile
-  //     id={activity.id}
-  //     key={activity.id}
-  //     event={activity.event}
-  //     location={activity.location}
-  //     body={activity.body}
-  //     addActivity={this.addActivity}
-  //     itineraryId={this.state.itineraryId}
-  //   />
-  // )
-  //
-  // return(
-  //   <div>
-  //   {activities}
-  //
-  //   </div>
-  //
-  // )

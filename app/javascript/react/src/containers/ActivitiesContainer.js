@@ -11,7 +11,6 @@ const ActivitiesContainer = props => {
         location={activity.location}
         body={activity.body}
         addActivity={this.addActivity}
-        dayId={this.state.dayId}
       />
     )
   })
@@ -20,6 +19,7 @@ const ActivitiesContainer = props => {
       {activities}
     </ul>
   )
+
 }
 
 
