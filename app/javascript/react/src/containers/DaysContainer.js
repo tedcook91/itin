@@ -13,12 +13,14 @@ const DaysContainer = props => {
       />
     )
     return(
-      <div className="day-tile">
-        {days}
-        <ActivityForm
-          itineraryId={day.itineraryId}
-          addActivity={day.addActivity}
-        />
+      <div className="medium-4 columns">
+        <div className="day-tile">
+          {days}
+          <ActivityForm
+            itineraryId={day.itineraryId}
+            addActivity={day.addActivity}
+          />
+        </div>
       </div>
     )
   })

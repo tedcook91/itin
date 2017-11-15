@@ -58,7 +58,6 @@ class ItineraryShowPage extends Component {
 
 
   render() {
-    console.log(this.state)
     let addActivity = (formPayload) => this.addActivity(formPayload)
     return(this.state.days.length > 0 &&
       <div>
