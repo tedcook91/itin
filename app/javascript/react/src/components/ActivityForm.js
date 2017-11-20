@@ -43,7 +43,7 @@ class ActivityForm extends React.Component {
 
   render() {
     return(
-      <div>
+      <div className="show-form">
         <form onSubmit={this.handleSubmit}>
           <TextInputField
             content={this.state.event}
@@ -63,7 +63,6 @@ class ActivityForm extends React.Component {
             name="body"
             handleChange={this.handleChange}
           />
-
           <div>
             <input type="submit" value="Submit" />
           </div>

@@ -4,11 +4,12 @@ const ActivityTile = props => {
   let textArray = [props.event, props.body, props.location]
   return(
         <div>
-            <h5>{props.event}</h5>
+            <h5>Activity Type: {props.event}</h5>
             <hr></hr>
-            <h5>{props.location}</h5>
+            <h5>Location: {props.location}</h5>
             <hr></hr>
-            <p>{props.body}</p>
+            <p>Description: {props.body}</p>
+            <hr></hr>
         </div>
   )
 }
