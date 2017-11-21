@@ -1,5 +1,7 @@
 # README
 
+Itin is an app that allows users to plan multiple travel itineraries.
+
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
