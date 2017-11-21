@@ -27,6 +27,6 @@ class Api::V1::DaysController < ApplicationController
   end
 
   def day_params
-    params.permit(:date)
+    params.permit(:date, :activity)
   end
 end

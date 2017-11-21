@@ -11,6 +11,7 @@ const DayTile = props => {
       />
       <ActivityForm
         addActivity={props.addActivity}
+        itineraryId={props.itineraryId}
       />
     </div>
 
