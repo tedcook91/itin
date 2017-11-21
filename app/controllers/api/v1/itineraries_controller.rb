@@ -21,7 +21,7 @@ class Api::V1::ItinerariesController < ApplicationController
       render json: {message: "Itinerary not saved"}
     end
   end
-  
+
   def show
     @itinerary = Itinerary.find(params[:itinerary_id])
 

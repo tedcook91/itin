@@ -10,18 +10,13 @@ const DaysContainer = props => {
         itineraryId={day.itineraryId}
         date={day.date}
         activities={day[1]}
+        addActivity={props.addActivity}
       />
     )
     return(
       <div className="medium-4 columns">
         <div className="day-tile">
           {days}
-            <div>
-            <ActivityForm
-              itineraryId={day.itineraryId}
-              addActivity={day.addActivity}
-            />
-          </div>
         </div>
       </div>
     )
