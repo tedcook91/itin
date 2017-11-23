@@ -9,14 +9,13 @@ class Api::V1::ActivitiesController < ApplicationController
 
   def create
     body = JSON.parse(request.body.read)
-    @activity = Activity.new(body)
+    itinerary = Itinerary.find(params[:itinerary_id])
 
+    activity.itinerary = itinerary
+    activity = Activity.new(body)
 
     activity.save
 
   end
 
-  # def activity_params
-  #   params.permit(:location,:event,:body,:activity)
-  # end
 end
