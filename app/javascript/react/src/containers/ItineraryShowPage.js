@@ -15,6 +15,7 @@ class ItineraryShowPage extends Component {
     this.fetchUser = this.fetchUser.bind(this)
     this.fetchDays = this.fetchDays.bind(this)
     this.addActivity = this.addActivity.bind(this)
+    this.addDay = this.addDay.bind(this)
   }
   componentDidMount() {
     this.fetchUser()
@@ -55,9 +56,13 @@ class ItineraryShowPage extends Component {
     })
   }
 
-
+  addDay() {
+    let days = this.state.days
+    days.push(<ActivityForm />)
+  }
 
   render() {
+    let addDay = () => this.addDay()
     let addActivity = (formPayload) => this.addActivity(formPayload)
     return(this.state.days.length > 0 &&
       <div>
@@ -66,6 +71,7 @@ class ItineraryShowPage extends Component {
           addActivity={this.addActivity}
           itineraryId={this.state.itineraryId}
         />
+        <div><button type="button" name="add-day" label="add-day" onClick={addDay}></button></div>
       </div>
     )
   }

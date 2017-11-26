@@ -15,7 +15,6 @@ class Api::V1::ItinerariesController < ApplicationController
     body.merge!(user: current_user)
 
     @itinerary = Itinerary.new(body)
-    binding.pry
 
     if @itinerary.save
       render json: {message: "Itinerary saved"}
