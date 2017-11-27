@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import ActivityTile from "../components/ActivityTile";
 import ActivityForm from "../components/ActivityForm";
 import DaysContainer from "../containers/DaysContainer";
+import AddDay from "../components/AddDay";
 
 
 class ItineraryShowPage extends Component {
@@ -15,7 +16,6 @@ class ItineraryShowPage extends Component {
     this.fetchUser = this.fetchUser.bind(this)
     this.fetchDays = this.fetchDays.bind(this)
     this.addActivity = this.addActivity.bind(this)
-    this.addDay = this.addDay.bind(this)
   }
   componentDidMount() {
     this.fetchUser()
@@ -57,12 +57,12 @@ class ItineraryShowPage extends Component {
   }
 
   addDay() {
-    let days = this.state.days
-    days.push(<ActivityForm />)
+    this.state.days.push(<DaysContainer />)
+    this.forceUpdate();
   }
 
   render() {
-    let addDay = () => this.addDay()
+
     let addActivity = (formPayload) => this.addActivity(formPayload)
     return(this.state.days.length > 0 &&
       <div>
@@ -71,7 +71,7 @@ class ItineraryShowPage extends Component {
           addActivity={this.addActivity}
           itineraryId={this.state.itineraryId}
         />
-        <div><button type="button" name="add-day" label="add-day" onClick={addDay}></button></div>
+        <AddDay addDay={this.addDay}/>
       </div>
     )
   }
