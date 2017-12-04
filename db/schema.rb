@@ -17,14 +17,12 @@ ActiveRecord::Schema.define(version: 20171109223815) do
 
   create_table "activities", force: :cascade do |t|
     t.bigint "day_id", null: false
-    t.bigint "itinerary_id", null: false
     t.string "location"
     t.string "event"
     t.text "body"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["day_id"], name: "index_activities_on_day_id"
-    t.index ["itinerary_id"], name: "index_activities_on_itinerary_id"
   end
 
   create_table "days", force: :cascade do |t|

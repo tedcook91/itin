@@ -4,7 +4,7 @@ class AddDay extends Component {
   constructor(props) {
     super(props);
     this.state = {
-
+      addDays: this.addDays
     }
   }
 

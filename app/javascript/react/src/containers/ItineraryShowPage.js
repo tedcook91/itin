@@ -57,8 +57,11 @@ class ItineraryShowPage extends Component {
   }
 
   addDay() {
-    this.state.days.push(<DaysContainer />)
-    this.forceUpdate();
+    let newState = this.state;
+    newState.days.push(
+      <DaysContainer />
+    )
+    this.setState(newState);
   }
 
   render() {
