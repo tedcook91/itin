@@ -3,8 +3,8 @@ class Api::V1::ActivitiesController < ApplicationController
   # protect_from_forgery unless: -> { request.format.json? }
 
   def index
-
-    render json: Activity.all
+    day = Day.find(params[:day_id])
+    render json: day.activities
   end
 
   def create
@@ -14,7 +14,7 @@ class Api::V1::ActivitiesController < ApplicationController
     activity.day = day
     @activity = Activity.new(body)
 
-    activity.save
+    @activity.save
 
   end
 

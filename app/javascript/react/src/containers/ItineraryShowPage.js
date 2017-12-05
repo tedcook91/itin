@@ -46,7 +46,7 @@ class ItineraryShowPage extends Component {
   }
 
   addActivity(formPayload) {
-    fetch(`/api/v1/activities`, {
+    fetch(`/api/v1/users/${this.state.userId}/itineraries/${this.state.itineraryId}`, {
       credentials: "same-origin",
       method: "POST",
       headers: {"Content-Type": "application/json"},
