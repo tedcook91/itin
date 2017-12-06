@@ -35,7 +35,7 @@ class ActivityForm extends React.Component {
       event: this.state.event,
       body: this.state.body,
       location: this.state.location,
-      day_id: parseInt(this.props.dayId)
+      day_id: parseInt(this.props.days)
     }
     this.props.addActivity(formPayload);
     this.handleClearForm(event);

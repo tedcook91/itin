@@ -9,6 +9,7 @@ const DaysContainer = props => {
       <DayTile
         itineraryId={day.itineraryId}
         date={day.date}
+        day={day.dayId}
         activities={day[1]}
         addActivity={props.addActivity}
       />
