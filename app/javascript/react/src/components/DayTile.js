@@ -3,6 +3,7 @@ import ActivitiesContainer from '../containers/ActivitiesContainer';
 import ActivityForm from '../components/ActivityForm';
 
 const DayTile = props => {
+
   return (
 
     <div className="day-card">
@@ -12,7 +13,7 @@ const DayTile = props => {
       <ActivityForm
         addActivity={props.addActivity}
         itineraryId={props.itineraryId}
-        dayId={props.dayId}
+        dayId={props.id}
       />
     </div>
 
