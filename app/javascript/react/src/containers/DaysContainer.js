@@ -2,7 +2,6 @@ import React from 'react';
 import DayTile from '../components/DayTile';
 
 const DaysContainer = props => {
-
   let days = props.days.map(day => {
 
     return(

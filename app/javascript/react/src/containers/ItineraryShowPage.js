@@ -65,11 +65,13 @@ class ItineraryShowPage extends Component {
   }
 
   render() {
-
+    // console.log(this.state.days)
     let addActivity = (formPayload) => this.addActivity(formPayload)
     return(this.state.days.length > 0 &&
       <div>
         <DaysContainer
+          // id={this.state.days.day.id}
+          // key={day.id}
           days={this.state.days}
           addActivity={this.addActivity}
           itineraryId={this.state.itineraryId}

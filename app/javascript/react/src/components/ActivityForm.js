@@ -35,13 +35,13 @@ class ActivityForm extends React.Component {
       event: this.state.event,
       body: this.state.body,
       location: this.state.location,
-      day_id: parseInt(this.props.days)
     }
     this.props.addActivity(formPayload);
     this.handleClearForm(event);
   }
 
   render() {
+    console.log(this.dayId)
     return(
       <div className="show-form">
         <form onSubmit={this.handleSubmit}>

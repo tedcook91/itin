@@ -10,11 +10,12 @@ const ActivitiesContainer = props => {
         event={activity.event}
         location={activity.location}
         body={activity.body}
+        dayId={activity.day_id}
         addActivity={this.addActivity}
       />
     )
   })
-  return activities;  
+  return activities;
 }
 
 

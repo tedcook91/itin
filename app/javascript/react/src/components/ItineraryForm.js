@@ -40,6 +40,7 @@ class ItineraryForm extends Component {
   }
 
   render() {
+    console.log(this.state.name)
     return(
       <div className="grid-container">
         <div className="grid-x grid-padding-x">

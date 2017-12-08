@@ -13,7 +13,7 @@ class Api::V1::DaysController < ApplicationController
     day.itinerary = itinerary
 
 
-    if day.save
+    if @day.save
       render json: {message: "Day saved"}
     else
       render json: {message: "Day not saved"}
@@ -27,6 +27,6 @@ class Api::V1::DaysController < ApplicationController
   # end
 
   def day_params
-    params.permit(:date, :activity)
+    params.permit(:date, :activity, :day_id)
   end
 end

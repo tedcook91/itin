@@ -4,6 +4,7 @@ class Api::V1::ActivitiesController < ApplicationController
 
   def index
     day = Day.find(params[:day_id])
+    binding.pry
     render json: day.activities
   end
 
@@ -14,7 +15,7 @@ class Api::V1::ActivitiesController < ApplicationController
     activity.day = day
     @activity = Activity.new(body)
 
-    @activity.save
+    activity.save
 
   end
 
