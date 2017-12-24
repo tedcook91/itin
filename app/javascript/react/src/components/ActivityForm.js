@@ -41,7 +41,6 @@ class ActivityForm extends React.Component {
   }
 
   render() {
-    console.log(this.dayId)
     return(
       <div className="show-form">
         <form onSubmit={this.handleSubmit}>

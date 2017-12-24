@@ -25,19 +25,7 @@ class Api::V1::ItinerariesController < ApplicationController
 
   def show
     @itinerary = Itinerary.find(params[:itinerary_id])
-
-    itinerary_data = {}
-    itinerary_data["id"] = @itinerary.id
-    itinerary_data["name"] = @itinerary.name
-    itinerary_data["user_id"] = @itinerary.user_id
-    itinerary_data["notes"] = @itinerary.notes
-    itinerary_data["days"] = []
-
-    @itinerary.days.each do |day|
-      itinerary_data["days"] << [day, day.activities]
-    end
-
-    render json: { itinerary: itinerary_data }
+    render json: @itinerary.activities
   end
 
 end

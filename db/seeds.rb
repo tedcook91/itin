@@ -12,14 +12,10 @@ user = User.create([{id: 1, provider: "google", uid: "113263435469643238085", fi
 
 itin1 = Itinerary.create([{id: 1, user_id: 1, name: "First Itinerary", notes: "This is the first itinerary"}])
 
-day1 = Day.create([{id: 1, itinerary_id: 1, date: Date.parse("11-11-2017")}])
+activity1 = Activity.create([{id: 1, itinerary_id: 1, day: 1, location: "Boston", event: "Dinner", body: "This is dinner in Boston"}])
 
-day2 = Day.create([{id: 2, itinerary_id: 1, date: Date.parse("11-12-2017")}])
+activity2 = Activity.create([{id: 2, itinerary_id: 1, day: 1, location: "New York", event: "Lunch", body: "This is lunch in New York"}])
 
-activity1 = Activity.create([{id: 1, day_id: 1, location: "Boston", event: "Dinner", body: "This is dinner in Boston"}])
+actvity3 = Activity.create ([{id: 3, itinerary_id: 1, day: 2, location: "DC", event: "Lunch", body: "Eat at Taqueria Nacional"}])
 
-activity2 = Activity.create([{id: 2, day_id: 1, location: "New York", event: "Lunch", body: "This is lunch in New York"}])
-
-actvity3 = Activity.create ([{id: 3, day_id: 2, location: "DC", event: "Lunch", body: "Eat at Taqueria Nacional"}])
-
-activity4 = Activity.create([{id: 4, day_id: 2, location: "DC", event: "Tourism", body: "See President Trump get peed on by hookers"}])
+activity4 = Activity.create([{id: 4, itinerary_id: 1, day: 2, location: "DC", event: "Tourism", body: "See President Trump get peed on by hookers"}])

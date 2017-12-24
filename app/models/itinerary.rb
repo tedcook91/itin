@@ -1,6 +1,6 @@
 class Itinerary < ApplicationRecord
   belongs_to :user
-  has_many :days
+  has_many :activities
 
   validates :name, length: {within: 3..20}
   validates :notes, length: {maximum: 40}
