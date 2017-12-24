@@ -3,20 +3,21 @@ class Api::V1::ActivitiesController < ApplicationController
   # protect_from_forgery unless: -> { request.format.json? }
 
   def index
-    day = Day.find(params[:day_id])
-    binding.pry
-    render json: day.activities
+    itinerary = Itinerary.find(params[:itinerary_id])
+    render json: itinerary.activities
   end
 
   def create
-    body = JSON.parse(request.body.read)
-    day = Day.find(params[:day_id])
 
-    activity.day = day
+    body = JSON.parse(request.body.read)
+
     @activity = Activity.new(body)
 
-    activity.save
-
+    if @activity.save
+      render json: {message: "Activity saved successfully!"}
+    else
+      render json: {message: "Activity could not be saved."}
+    end
   end
 
 end

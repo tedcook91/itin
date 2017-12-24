@@ -9,7 +9,7 @@ Rails.application.routes.draw do
       namespace "v1" do
         resources :users, only: [:index, :show]
         resources :activities
-        # resources :itineraries, only: [:index]
+        resources :itineraries, only: [:index]
 
         get "/current-user", to: "users#user"
 

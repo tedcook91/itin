@@ -14,7 +14,6 @@ const DayTile = props => {
         itineraryId={props.itineraryId}
         activities={props.activities}
         dayId={props.day_id}
-
       />
     </div>
 
