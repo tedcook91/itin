@@ -3,8 +3,9 @@ import DayTile from '../components/DayTile';
 
 const DaysContainer = props => {
   let days = props.days.map(day => {
-
+// console.log(day.id)
     return(
+
       <DayTile
         itineraryId={day.itineraryId}
         date={day.date}
