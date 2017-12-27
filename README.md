@@ -3,7 +3,15 @@
 
 # README
 
-<h2> Description </h2>
+## Description
 Itin is an app that allows users to plan multiple travel itineraries. 
-<br>
 Built with Ruby on Rails and React. Users login using Google Omniauth. Users can create travel itineraries that allow them to plan their days with multiple activities.
+
+## To run locally:
+```
+* git clone https://github.com/CaptainAngus/itin.git
+* rake db:create
+* rake db:migrate
+* rails s
+* http://localhost:3000/
+```
