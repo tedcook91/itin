@@ -17,7 +17,7 @@ Rails.application.routes.draw do
         get "users/:id/itineraries", to: "itineraries#index"
 
         #one specific itinerary for a user
-        get "users/:id/itineraries/:itinerary_id", to: "itineraries#show"
+        get "users/:id/itineraries/:itinerary_id", to: "activities#index"
 
         #CREATE
         post "users/:user_id/itineraries/:itinerary_id", to: "activities#create"

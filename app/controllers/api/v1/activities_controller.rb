@@ -1,23 +1,28 @@
 class Api::V1::ActivitiesController < ApplicationController
   skip_before_action :verify_authenticity_token, only: [:create, :update, :destroy]
-  # protect_from_forgery unless: -> { request.format.json? }
-
-  def index
-    itinerary = Itinerary.find(params[:itinerary_id])
-    render json: itinerary.activities
-  end
 
   def create
+    @activity = Activity.new(
+      itinerary_id: params[:itinerary_id],
+      event: params[:event],
+      location: params[:location],
+      body: params[:body]
+    )
+      if @activity.save
+        render_activities(@activity.itinerary)
+      else
+        render json: { error: @activity.errors.full_messages }, status: :unprocessable_entity
+      end
+  end
 
-    body = JSON.parse(request.body.read)
+  def index
+    @itinerary = Itinerary.find(params[:itinerary_id])
+    render_activities(@itinerary)
+  end
 
-    @activity = Activity.new(body)
-
-    if @activity.save
-      render json: {message: "Activity saved successfully!"}
-    else
-      render json: {message: "Activity could not be saved."}
-    end
+  private
+  def render_activities(itinerary)
+    render json: {activities: itinerary.activities}
   end
 
 end
