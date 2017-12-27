@@ -38,7 +38,7 @@ class ItineraryShowPage extends Component {
     .then(res => res.json())
     .then(data => {
       this.setState({
-        activities: data
+        activities: data.activities
       })
     })
   }
@@ -55,7 +55,7 @@ class ItineraryShowPage extends Component {
   }
 
   render() {
-    console.log(this.state)
+    console.log(this.state.activities)
     let addActivity = (formPayload) => this.addActivity(formPayload)
     let activities = this.state.activities.map(activity =>
       <ActivityTile
