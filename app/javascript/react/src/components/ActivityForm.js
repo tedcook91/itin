@@ -7,7 +7,8 @@ class ActivityForm extends React.Component {
     this.state = {
       event:"",
       body:"",
-      location:""
+      location:"",
+      day:""
     }
     this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
@@ -25,7 +26,8 @@ class ActivityForm extends React.Component {
     this.setState({
       event:"",
       body:"",
-      location:""
+      location:"",
+      day:""
     })
   }
 
@@ -35,6 +37,7 @@ class ActivityForm extends React.Component {
       event: this.state.event,
       body: this.state.body,
       location: this.state.location,
+      day: this.state.day
     }
     this.props.addActivity(formPayload);
     this.handleClearForm(event);
@@ -42,30 +45,40 @@ class ActivityForm extends React.Component {
 
   render() {
     return(
-      <div className="show-form">
-        <form onSubmit={this.handleSubmit}>
-          <TextInputField
-            content={this.state.event}
-            label="Event"
-            name="event"
-            handleChange={this.handleChange}
-          />
-          <TextInputField
-            content={this.state.location}
-            label="Location"
-            name="location"
-            handleChange={this.handleChange}
-          />
-          <TextInputField
-            content={this.state.body}
-            label="Notes"
-            name="body"
-            handleChange={this.handleChange}
-          />
-          <div>
-            <input type="submit" value="Submit" />
+      <div className="grid-container">
+        <div className="grid-x grid-padding-x">
+          <div className="medium-3 cell">
+            <form className="callout" onSubmit={this.handleSubmit}>
+              <TextInputField
+                content={this.state.event}
+                label="Event"
+                name="event"
+                handleChange={this.handleChange}
+              />
+              <TextInputField
+                content={this.state.location}
+                label="Location"
+                name="location"
+                handleChange={this.handleChange}
+              />
+              <TextInputField
+                content={this.state.body}
+                label="Notes"
+                name="body"
+                handleChange={this.handleChange}
+              />
+              <TextInputField
+                content={this.state.day}
+                label="Day"
+                name="day"
+                handleChange={this.handleChange}
+              />
+              <div>
+                <input className="button" type="submit" value="Submit" />
+              </div>
+            </form>
           </div>
-        </form>
+        </div>
       </div>
     )
   }
