@@ -8,7 +8,7 @@ class Api::V1::ActivitiesController < ApplicationController
       location: params[:location],
       body: params[:body]
     )
-      if @activity.save
+      if @activity.save!
         render_activities(@activity.itinerary)
       else
         render json: { error: @activity.errors.full_messages }, status: :unprocessable_entity
