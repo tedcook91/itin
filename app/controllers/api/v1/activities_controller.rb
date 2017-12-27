@@ -6,9 +6,10 @@ class Api::V1::ActivitiesController < ApplicationController
       itinerary_id: params[:itinerary_id],
       event: params[:event],
       location: params[:location],
-      body: params[:body]
+      body: params[:body],
+      day: params[:day]
     )
-      if @activity.save
+      if @activity.save!
         render_activities(@activity.itinerary)
       else
         render json: { error: @activity.errors.full_messages }, status: :unprocessable_entity
@@ -22,7 +23,7 @@ class Api::V1::ActivitiesController < ApplicationController
 
   private
   def render_activities(itinerary)
-    render json: {activities: itinerary.activities}
+    render json: {activities: itinerary.activities.order(:day)}
   end
 
 end

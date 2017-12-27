@@ -40,7 +40,6 @@ class ItineraryForm extends Component {
   }
 
   render() {
-    console.log(this.state.name)
     return(
       <div className="grid-container">
         <div className="grid-x grid-padding-x">
@@ -58,7 +57,6 @@ class ItineraryForm extends Component {
                 name="notes"
                 handleChange={this.handleChange}
               />
-
               <div className="submit-button">
                 <input className= "button" type="submit" value="Submit"/>
               </div>
