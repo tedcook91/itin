@@ -4,6 +4,6 @@
 # README
 
 <h2> Description </h2>
-Itin is an app that allows users to plan multiple travel itineraries.
-
+Itin is an app that allows users to plan multiple travel itineraries. 
+<br>
 Built with Ruby on Rails and React. Users login using Google Omniauth. Users can create travel itineraries that allow them to plan their days with multiple activities.
