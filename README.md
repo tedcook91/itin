@@ -12,6 +12,8 @@ Built with Ruby on Rails and React. Users login using Google Omniauth. Users can
 * git clone https://github.com/CaptainAngus/itin.git
 * rake db:create
 * rake db:migrate
+* bundle
+* npm install webpack
 * rails s
 * http://localhost:3000/
 ```
