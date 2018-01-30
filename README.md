@@ -13,6 +13,8 @@ Built with Ruby on Rails and React. Users login using Google Omniauth. Users can
 * rake db:create
 * rake db:migrate
 * bundle
+* bundle exec figaro install
+* go to config/application.yml file and enter your GOOGLE_CLIENT_ID and GOOGLE_CLIENT_SECRET (allows omniauth functionality)
 * npm install webpack
 * rails s
 * http://localhost:3000/
